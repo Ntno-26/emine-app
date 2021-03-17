@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,3 +61,52 @@ Route::get('/rendicion_2019', function () {
 Route::get('/contacto', function () {
     return view('vistaprincipal/contacto');
 });
+Route::get('/forgot', function () {
+    return view('usuario/forgot-password');
+});
+
+/*USUARIO */
+Route::get('/login', function () {
+    return view('usuario/login');
+});
+
+Route::get('/register', function () {
+    return view('usuario/register');
+});
+
+Route::get('/usuarios_view', function () {
+    return view('usuario/mostrarUsuario');
+});
+
+/*DASHBOARD*/
+Route::get('/admin', function () {
+    return view('dashboard/index_dashboard');
+});
+
+/*Indicadores */
+Route::get('/indicador_create', function () {
+    return view('indicador/CrearIndicador');
+});
+
+Route::get('/indicador_view', function () {
+    return view('indicador/VerIndicador');
+});
+
+Route::get('/evaluar_view', function () {
+    return view('evaluar/EvaluarView');
+});
+
+/*Areas*/
+Route::get('/areas_view', function () {
+    return view('area/MostrarArea');
+});
+
+Route::get('/areas_create', function () {
+    return view('area/CrearArea');
+});
+
+Route::get('/database', function () {
+    return view('usuario/database');
+});
+
+Route::post('/user', [RegisterController::class, 'store'])->name('usuario.store');
