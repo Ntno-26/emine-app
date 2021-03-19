@@ -20,27 +20,43 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" name="name" class="form-control form-control-user"
-                                            placeholder="First Name">
+                                            placeholder="First Name" value="{{old('name')}}">
                                     </div>
+
                                     <div class="col-sm-6">
                                         <input type="text" name="l_name" class="form-control form-control-user" 
-                                            placeholder="Last Name">
+                                            placeholder="Last Name" value="{{old('l_name')}}">
                                     </div>
                                 </div>
+
+                                @error('name')
+                                         <small>*{{$message}}</small>
+                                @enderror
+
                                 <div class="form-group">
                                     <input type="text" name="email" class="form-control form-control-user" 
-                                            placeholder="Email Address">
+                                            placeholder="Email Address" value="{{old('email')}}">
                                 </div>
+
+                                @error('email')
+                                         <small>*{{$message}}</small>
+                                @enderror
+
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" name="password" class="form-control form-control-user"
+                                        <input type="password" name="password" class="form-control form-control-user"
                                              placeholder="Password">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" name="c_password" class="form-control form-control-user"
+                                        <input type="password" name="c_password" class="form-control form-control-user"
                                                  placeholder="Repeat Password">
                                     </div>
                                 </div>
+
+                                @error('password')
+                                         <small>*{{$message}}</small>
+                                @enderror
+
                                 <!--<a href="/login" class="btn btn-primary btn-user btn-block">
                                     Register Account
                                 </a>-->
